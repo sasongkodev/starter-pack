@@ -1,18 +1,18 @@
 ---
+// src/layouts/Layout.astro
 import "../styles/global.css";
+import Navbar from '../components/Navbar.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
-	</body>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <title>My Blog</title>
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <Navbar />
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <slot />
+  </main>
+</body>
 </html>
