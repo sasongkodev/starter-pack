@@ -1,0 +1,16 @@
+---
+import NewsCard from "./NewsCard.astro";
+import { articles } from "../data/articles";
+
+// Ambil 3 postingan terbaru
+const latestArticles = articles.slice(0, 3);
+---
+
+<section class="mt-12">
+  <h2 class="text-2xl font-bold mb-6">Tulisan Terbaru</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {latestArticles.map(article => (
+      <NewsCard {...article} />
+    ))}
+  </div>
+</section>

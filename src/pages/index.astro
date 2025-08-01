@@ -1,18 +1,42 @@
 ---
-// src/layouts/Layout.astro
 import "../styles/global.css";
-import Navbar from '../components/Navbar.astro';
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import PostList from "../components/PostList.astro";
 ---
 
-<html lang="id">
-<head>
-  <meta charset="utf-8" />
-  <title>My Blog</title>
-</head>
-<body class="bg-gray-100 text-gray-900">
-  <Navbar />
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <slot />
-  </main>
-</body>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dev/notes — Catatan Harian Developer</title>
+    <meta
+      name="description"
+      content="Catatan, artikel, dan tutorial seputar pengembangan web, fullstack, dan teknologi oleh developer Indonesia."
+    />
+    <link rel="icon" href="/favicon.ico" />
+    <!-- Optional: Preload font atau gambar kunci -->
+  </head>
+  <body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col">
+    <Navbar />
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <!-- Hero Section -->
+      <section class="mb-14 max-w-3xl">
+        <h1 class="text-3xl sm:text-4xl font-semibold mb-4 text-slate-800 dark:text-slate-100 leading-tight">
+          Selamat datang di <span class="text-emerald-600 dark:text-emerald-400">dev/notes</span> 👋
+        </h1>
+        <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+          Tempat saya menyimpan catatan teknis, eksperimen kode, dan tutorial 
+          <strong class="text-slate-800 dark:text-slate-200">untuk developer seperti kamu</strong>.
+          Mari belajar bersama — langkah kecil, tapi konsisten.
+        </p>
+      </section>
+
+      <!-- Daftar Artikel -->
+      <PostList />
+    </main>
+
+    <Footer />
+  </body>
 </html>

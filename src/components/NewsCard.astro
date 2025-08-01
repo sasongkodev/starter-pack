@@ -1,0 +1,14 @@
+---
+const { title, excerpt, image, slug } = Astro.props;
+---
+
+<article class="bg-white dark:bg-zinc-800 rounded-xl shadow-sm hover:shadow-md transition border border-zinc-200 dark:border-zinc-700 overflow-hidden">
+  <img src={image} alt={title} class="h-40 w-full object-cover" />
+  <div class="p-4">
+    <h3 class="text-lg font-bold mb-2 text-zinc-900 dark:text-white">{title}</h3>
+    <p class="text-sm text-zinc-600 dark:text-zinc-400 mb-3">{excerpt}</p>
+    <a href={`/${slug}`} class="text-emerald-600 text-sm font-medium hover:underline">
+      Baca selengkapnya →
+    </a>
+  </div>
+</article>
